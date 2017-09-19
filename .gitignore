@@ -1,12 +1,78 @@
-.architect
-bootstrap.css
-bootstrap.js
-bootstrap.json
-bootstrap.jsonp
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
 build/
-classic.json
-classic.jsonp
-ext/
-modern.json
-modern.jsonp
-resources/sass/.sass-cache/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcarchive
+*.xcuserstate
+project.xcworkspace
+
+# Android/IJ
+#
+*.iml
+.idea
+.gradle
+local.properties
+
+# node.js
+#
+node_modules/
+*.log
+.nvm
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
+
+# Gradle
+/build/
+/Examples/**/android/app/build/
+/Examples/**/android/app/gradle/
+/Examples/**/android/app/gradlew
+/Examples/**/android/app/gradlew.bat
+/ReactAndroid/build/
+
+# Buck
+.buckd
+buck-out
+/ReactAndroid/src/main/jni/prebuilt/lib/armeabi-v7a/
+/ReactAndroid/src/main/jni/prebuilt/lib/x86/
+
+# Test generated files
+/ReactAndroid/src/androidTest/assets/AndroidTestBundle.js
+*.tmp
+
+*compiled.js
+*.js.map
+
+/tmp
+
+# fastlane specific
+fastlane/report.xml
+#
+# # deliver temporary files
+fastlane/Preview.html
+#
+# # snapshot generated screenshots
+fastlane/screenshots
+#
+# # scan temporary files
+fastlane/test_output
