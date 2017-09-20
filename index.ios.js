@@ -12,21 +12,12 @@ import {
   View,
 } from 'react-native';
 
+import C1S1 from './Learning/Chapter1/C1Section1';
+
 export default class LearnES6 extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <C1S1 />
     );
   }
 }
