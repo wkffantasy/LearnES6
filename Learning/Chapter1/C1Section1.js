@@ -21,8 +21,59 @@ export default class C1S1 extends Component {
     // this._test2();
     // this._test3();
     // this._test4();
-    this._test5();
+    // this._test5();
+    // this._test6();
+    this._test7();
   }
+  _test7(){
+    // const i;
+    const foo = {};
+    foo.name = 'fantasy';
+    console.log('foo.name ==',foo.name);
+    foo = {};
+    /*
+const是用来声明常量的，一旦声明，它的值就不能改变。也就意味着对于const来说，只声明不赋值也会报错。
+比如上面的const i;
+同let一样，存在暂时性死区，只能在声明后使用，而且不可重复声明。
+对于复合型的变量，变量名不指向数据，而是指向数据所在的地址。比如以下
+const foo = {};
+foo.name = 'fantasy';
+console.log('foo.name ==',foo.name); //打印的是fantasy
+但是 foo = {}; 会报错 ‘foo’ is read-only
+
+在rn中经常会有跨模块的常量，可以这么用，
+在config.js文件中
+export const A = 1;
+export const name = 'fantasy';
+export const b = [1,2,3];
+
+在test1.js中想用config.js的常量，可以这么写
+import * as config from './config'
+console.log('config.A ==',config.A);         // 1
+console.log('config.B ==',config.B);         // [1,2,3]
+console.log('config.name ==',config.name);   // fantasy
+
+在test2.js中想用config.js的常量，可以这么写
+import {A,B,name} from './config'
+console.log('A ==',A);         // 1
+console.log('B ==',B);         // [1,2,3]
+console.log('name ==',name);   // fantasy
+
+     */
+  }
+  _test6(){
+    let  n = 5;
+    if (true) {
+      let n = 10;
+    }
+    console.log('n ==',n);
+    /*
+let 为js新增了块级作用域
+在rn上，log出来的是5
+在浏览器上 报错 SyntaxError: Identifier 'n' has already been declared
+     */
+  }
+
   _test5(){
     //es6不允许在相同的作用域内重复声明同一个变量
     function a() {
