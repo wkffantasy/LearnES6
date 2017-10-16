@@ -23,36 +23,36 @@ export default class C1S1 extends Component {
     // this._test4();
     this._test5();
   }
-  _test5(){
+  _test5() {
     //es6不允许在相同的作用域内重复声明同一个变量
     function a() {
-      let a = 10;
+      const a = 10;
       // var a = 1;
     }
     //会直接报错
     //react native上报错是 duplicate declaration 'a',重复声明a
     //google浏览器的开发者工具上 报错是SyntaxError: Identifier 'a' has already been declared
 
-    function b(c){
+    function b(c) {
       // let c = 10;
     }
     //直接报错 同上，所以 在函数内部，声明的变量不能和参数名一样
     function aaa(vv) {
       {
-        let vv = 100;
+        const vv = 100;
       }
     }
     //上面这个不报错，不在同一个块级作用域内
   }
-  _test4(){
-    var tmp = '123';
+  _test4() {
+    const tmp = '123';
     if (true) {
       tmp = 'abs';
-      console.log('tmp ==',tmp);
+      console.log('tmp ==', tmp);
       let tmp;
-      console.log('tmp ==',tmp);
+      console.log('tmp ==', tmp);
     }
-    console.log('tmp ==',tmp);
+    console.log('tmp ==', tmp);
     /*
     在react native中 打印顺序是 abs undefined  123
     但在google浏览器的开发者工具上 直接报错ReferenceError: tmp is not defined
@@ -61,13 +61,13 @@ export default class C1S1 extends Component {
 
      */
   }
-  _test3(){
-    console.log('c ==',c);
-    var c = 10;
-    console.log('d ==',d);
+  _test3() {
+    console.log('c ==', c);
+    let c = 10;
+    console.log('d ==', d);
     let d = 5;
     typeof y;
-    var y = 10;
+    let y = 10;
     typeof x;
     let x = 10;
     /*
@@ -80,25 +80,24 @@ typeof y; var y = 10; 算是打印吧，会出现 number
 
 所以，我们在rn中，变量一定要在声明后使用
      */
-
   }
-  _test2(){
-    var a = [];
-    for (var i = 0; i < 10; i++) {
-      a[i] = function(){
+  _test2() {
+    const a = [];
+    for (let i = 0; i < 10; i++) {
+      a[i] = function () {
         console.log(i);
-      }
+      };
     }
     a[6]();
     //打印是10
 
-    var b = [];
+    const b = [];
     for (let i = 0; i < 10; i++) {
-      a[i] = function(){
+      a[i] = function () {
         console.log(i);
-      }
+      };
     }
-    console.log('b ==',b);
+    console.log('b ==', b);
     //打印是6
     /*
 说明var声明的，在全局范围内都有效。
@@ -108,10 +107,10 @@ typeof y; var y = 10; 算是打印吧，会出现 number
   _test1() {
     {
       var b = 1;
-      let a = 10;
+      const a = 10;
     }
-    console.log('b ==',b);
-    console.log('a ==',a);
+    console.log('b ==', b);
+    console.log('a ==', a);
     /*
 es6新增了let命令，但是let所声明的变量只在let命令所在的代码块有效，比如上个代码，
 打印的是b==1  下一个打印直接报错，a is not defined

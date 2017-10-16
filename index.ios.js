@@ -12,33 +12,16 @@ import {
   View,
 } from 'react-native';
 
+//第一章
 import C1S1 from './Learning/Chapter1/C1Section1';
+//第二章
+import C2S1 from './Learning/Chapter2/C2Section1';
+import C2S2 from './Learning/Chapter2/C2Section2';
 
-export default class LearnES6 extends Component {
-  render() {
-    return (
-      <C1S1 />
-    );
-  }
+export default function LearnES6() {
+  return (
+    <C2S2 />
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('LearnES6', () => LearnES6);
